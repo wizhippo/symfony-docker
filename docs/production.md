@@ -98,3 +98,18 @@ As a shortcut, `private_ranges` may be configured to trust all private IP ranges
 +    trusted_proxies private_ranges
 +}
 ```
+
+## Passing local environment variables to containers
+
+By default, `.env.local` and `.env.*.local` files are excluded from production images.
+If you want to pass them to your containers, you can use the [`env_file` attribute](https://docs.docker.com/compose/environment-variables/set-environment-variables/#use-the-env_file-attribute):
+
+```yaml
+# compose.prod.yml
+
+services:
+    php:
+        env_file:
+            - .env.prod.local
+        # ...
+```
