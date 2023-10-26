@@ -15,7 +15,7 @@ FROM caddy:2-alpine AS caddy_upstream
 # Base PHP image
 FROM php_upstream AS php_base
 
-WORKDIR /srv/app
+WORKDIR /app
 
 # persistent / runtime deps
 # hadolint ignore=DL3018
@@ -64,7 +64,7 @@ COPY --from=composer_upstream --link /composer /usr/bin/composer
 FROM php_base AS php_dev
 
 ENV APP_ENV=dev XDEBUG_MODE=off
-VOLUME /srv/app/var/
+VOLUME /app/var/
 
 RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
 
