@@ -30,7 +30,8 @@ For instance, to use self-signed certificates created with [mkcert](https://gith
     ```diff
     caddy:
     +  environment:
-    +    CADDY_EXTRA_CONFIG: "tls /etc/caddy/certs/tls.pem /etc/caddy/certs/tls.key"
+    +    CADDY_SERVER_EXTRA_DIRECTIVES: "tls /etc/caddy/certs/tls.pem /etc/caddy/certs/tls.key"
+        # ...
       volumes:
     +    - ./docker/caddy/certs:/etc/caddy/certs:ro
         - ./public:/srv/app/public:ro
