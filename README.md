@@ -36,6 +36,7 @@ A [Docker](https://www.docker.com/)-based installer and runtime for the [Symfony
 6. [TLS Certificates](docs/tls.md)
 7. [Using a Makefile](docs/makefile.md)
 8. [Troubleshooting](docs/troubleshooting.md)
+9. [Updating the template](docs/updating.md)
 
 ## License
 
